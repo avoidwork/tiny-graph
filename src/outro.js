@@ -1,14 +1,13 @@
 // Node, AMD & window supported
 if ( typeof exports != "undefined" ) {
-	module.exports = factory;
+	module.exports = graph;
 }
 else if ( typeof define == "function" ) {
 	define( function () {
-		return factory;
+		return graph;
 	} );
 }
 else {
-	global.graph = factory;
+	global.graph = graph;
 }
-} )
-( this );
+} )( this );

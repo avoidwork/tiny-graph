@@ -17,8 +17,8 @@ module.exports = function (grunt) {
 			dist : {
 				src : [
 					"src/intro.js",
-					"src/constructor.js",
-					"src/factory.js",
+					"src/node.js",
+					"src/graph.js",
 					"src/outro.js"
 				],
 				dest : "lib/<%= pkg.name %>.js"
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 				sourceMap: true,
 				sourceMapIncludeSources: true,
 				mangle: {
-					except: ["graph", "define", "export", "process"]
+					except: ["Graph", "Node", "define", "export", "process"]
 				}
 			},
 			target: {
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
 
 	// aliases
 	grunt.registerTask("test", ["jshint", "nodeunit"]);
-	grunt.registerTask("build", ["concat"/*, "test"*/]);
+	grunt.registerTask("build", ["concat", "test"]);
 	grunt.registerTask("default", ["build", "uglify"]);
 	grunt.registerTask("package", ["default", "jsdoc"]);
 };

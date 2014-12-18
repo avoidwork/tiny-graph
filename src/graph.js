@@ -1,46 +1,4 @@
 /**
- * Tiny graph data structure for Client or Server
- *
- * @author Jason Mulligan <jason.mulligan@avoidwork.com>
- * @copyright 2014 Jason Mulligan
- * @license BSD-3 <https://raw.github.com/avoidwork/tiny-graph/master/LICENSE>
- * @link http://avoidwork.github.io/tiny-graph
- * @module tiny-graph
- * @version 1.0.0
- */
-( function ( global ) {
-"use strict";
-
-/**
- * Node
- *
- * @param {Mixed} value [Optional] Node value
- * @constructor
- */
-function Node (value) {
-	this.value = value || null;
-	this.edges = {};
-}
-
-/**
- * Setting constructor loop
- *
- * @type {Object}
- */
-Node.prototype.constructor = Node;
-
-/**
- * Node factory
- *
- * @method node
- * @param {Mixed} value [Optional] Node value
- * @return {Object} Node
- */
-function node (value) {
-	return new Node(value);
-}
-
-/**
  * Graph
  *
  * @constructor
@@ -214,17 +172,3 @@ Graph.prototype.set_edge_value = function (x, y, v) {
 function graph () {
 	return new Graph();
 }
-
-// Node, AMD & window supported
-if ( typeof exports != "undefined" ) {
-	module.exports = graph;
-}
-else if ( typeof define == "function" ) {
-	define( function () {
-		return graph;
-	} );
-}
-else {
-	global.graph = graph;
-}
-} )( this );
