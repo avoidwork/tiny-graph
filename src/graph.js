@@ -20,7 +20,7 @@ Graph.prototype.constructor = Graph;
  * @method adjacent
  * @param  {String} x Node
  * @param  {String} y Node
- * @return {Boolean}  `true` if there is an adjacent edge
+ * @return {Boolean}  `true` if there is an adjacent edge, otherwise `false`
  */
 Graph.prototype.adjacent = function ( x, y ) {
 	var n = this.nodes[ x ];
@@ -55,7 +55,7 @@ Graph.prototype.neighbors = function ( x ) {
  * @method add
  * @param  {String} x Node
  * @param  {String} y Node
- * @return {Boolean}  `true` if successful, `false` if failure
+ * @return {Boolean}  `true` if successful, `false` if invalid
  */
 Graph.prototype.add = function ( x, y ) {
 	if ( this.nodes[ x ] !== undefined && this.nodes[ y ] !== undefined ) {
@@ -72,7 +72,7 @@ Graph.prototype.add = function ( x, y ) {
  * @method del
  * @param  {String} x Node
  * @param  {String} y Node
- * @return {Boolean}  `true` if successful, `false` if failure
+ * @return {Boolean}  `true` if successful, `false` if invalid
  */
 Graph.prototype.del = function ( x, y ) {
 	if ( this.nodes[ x ] !== undefined && this.nodes[ x ].edges[ y ] !== undefined ) {
@@ -107,7 +107,7 @@ Graph.prototype.get_node_value = function ( x ) {
  * @method set_node_value
  * @param  {String} x Node
  * @param  {Mixed}  v Value
- * @return {Object}   Graph
+ * @return {Boolean}  `true`
  */
 Graph.prototype.set_node_value = function ( x, v ) {
 	var n = this.nodes[ x ];
@@ -147,7 +147,7 @@ Graph.prototype.get_edge_value = function ( x, y ) {
  * @param  {String} x Node
  * @param  {String} y Node
  * @param  {Mixed}  v Value
- * @return {Object}   Graph
+ * @return {Boolean}  `true` if edge value is set, otherwise `false`
  */
 Graph.prototype.set_edge_value = function ( x, y, v ) {
 	if ( this.nodes[ x ] !== undefined && this.nodes[ x ].edges[ y ] !== undefined ) {
