@@ -1,13 +1,11 @@
 /.idea/
-/doc/
 /node_modules/
-/lib/tiny-proxy.min.js
-/lib/tiny-proxy.min.js.map
+/lib/tiny-graph.min.js
+/lib/tiny-graph.min.js.map
 /src/
 /test/
 .git
 .gitignore
 .jshintrc
 .travis.yml
-docstrap.json
 Gruntfile.js

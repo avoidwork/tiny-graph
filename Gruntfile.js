@@ -24,17 +24,6 @@ module.exports = function (grunt) {
 				dest : "lib/<%= pkg.name %>.js"
 			}
 		},
-		jsdoc : {
-			dist : {
-				src: ["lib/<%= pkg.name %>.js", "README.md"],
-				options: {
-				    destination : "doc",
-				    template    : "node_modules/ink-docstrap/template",
-				    configure   : "docstrap.json",
-				    "private"   : false
-				}
-			}
-		},
 		jshint : {
 			options : {
 				jshintrc : ".jshintrc"
@@ -75,7 +64,6 @@ module.exports = function (grunt) {
 	});
 
 	// tasks
-	grunt.loadNpmTasks("grunt-jsdoc");
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-nodeunit");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
@@ -86,5 +74,5 @@ module.exports = function (grunt) {
 	grunt.registerTask("test", ["jshint", "nodeunit"]);
 	grunt.registerTask("build", ["concat", "test"]);
 	grunt.registerTask("default", ["build", "uglify"]);
-	grunt.registerTask("package", ["default", "jsdoc"]);
+	grunt.registerTask("package", ["default"]);
 };
