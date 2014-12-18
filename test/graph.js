@@ -6,7 +6,7 @@ exports[ "lifecycle" ] = {
 		done();
 	},
 	test: function ( test ) {
-		test.expect( 21 );
+		test.expect( 25 );
 		test.equal( this.graph.get_node_value( 'f' ), undefined, "Should be `undefined`" );
 		test.equal( this.graph.set_node_value( 'f', 3 ), true, "Should be `true`" );
 		test.equal( this.graph.get_node_value( 'f' ), 3, "Should be `3`" );
@@ -28,6 +28,10 @@ exports[ "lifecycle" ] = {
 		test.equal( this.graph.neighbors( 'f' ).length, 0, "Should be `0`" );
 		test.equal( this.graph.get_edge_value( 'f', 'h' ), undefined, "Should be `undefined`" );
 		test.equal( this.graph.get_edge_value( 'h', 'f' ), undefined, "Should be `undefined`" );
+		test.equal( this.graph.set_node_value( 'n', 0 ), true, "Should be `true`" );
+		test.equal( this.graph.get_node_value( 'n' ), 0, "Should be `0`" );
+		test.equal( this.graph.set_node_value( 'o' ), true, "Should be `true`" );
+		test.equal( this.graph.get_node_value( 'o' ), null, "Should be `null`" );
 		test.done();
 	}
 };

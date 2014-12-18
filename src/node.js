@@ -5,7 +5,7 @@
  * @constructor
  */
 function Node ( value ) {
-	this.value = value || null;
+	this.value = value !== undefined ? value : null;
 	this.edges = {};
 }
 
