@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.5
+- Fixing `set_edge_value()` such that `null` is substituted for `v` if `v` is `undefined`, updating tests
+
 ## 1.0.4
 - Fixing a falsy issue in `Node` constructor, updating tests
 

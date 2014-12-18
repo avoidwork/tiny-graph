@@ -151,7 +151,7 @@ Graph.prototype.get_edge_value = function ( x, y ) {
  */
 Graph.prototype.set_edge_value = function ( x, y, v ) {
 	if ( this.nodes[ x ] !== undefined && this.nodes[ x ].edges[ y ] !== undefined ) {
-		this.nodes[ x ].edges[ y ] = this.nodes[ y ].edges[ x ] = v;
+		this.nodes[ x ].edges[ y ] = this.nodes[ y ].edges[ x ] = v !== undefined ? v : null;
 		return true;
 	}
 
