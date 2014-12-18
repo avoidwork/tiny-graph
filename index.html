@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>tiny-graph by avoidwork</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>tiny-graph</h1>
+        <p>Tiny graph data structure for Client or Server</p>
+
+        <p class="view"><a href="https://github.com/avoidwork/tiny-graph">View the Project on GitHub <small>avoidwork/tiny-graph</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/avoidwork/tiny-graph/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/avoidwork/tiny-graph/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/avoidwork/tiny-graph">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> g <span class="pl-k">=</span> graph();
+
+g.set_node_value(<span class="pl-s1"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>, <span class="pl-c1">3</span>);
+g.set_node_value(<span class="pl-s1"><span class="pl-pds">'</span>h<span class="pl-pds">'</span></span>, <span class="pl-c1">21</span>);
+g.<span class="pl-s3">add</span>(<span class="pl-s1"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>h<span class="pl-pds">'</span></span>);
+g.set_edge_value(<span class="pl-s1"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>h<span class="pl-pds">'</span></span>, <span class="pl-c1">100</span>);
+
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(g.adjacent(<span class="pl-s1"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>h<span class="pl-pds">'</span></span>)); <span class="pl-c">// true</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(g.neighbors(<span class="pl-s1"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>)); <span class="pl-c">// ['h']</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(g.get_edge_value(<span class="pl-s1"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>h<span class="pl-pds">'</span></span>)); <span class="pl-c">// 100</span></pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<h4>
+<a id="adjacentx-y" class="anchor" href="#adjacentx-y" aria-hidden="true"><span class="octicon octicon-link"></span></a>adjacent(x, y)</h4>
+
+<p>Tests whether there is an edge from node <code>x</code> to node <code>y</code></p>
+
+<h4>
+<a id="neighborsx" class="anchor" href="#neighborsx" aria-hidden="true"><span class="octicon octicon-link"></span></a>neighbors(x)</h4>
+
+<p>Lists all nodes <code>y</code> such that there is an edge from <code>x</code> to <code>y</code></p>
+
+<h4>
+<a id="addx-y" class="anchor" href="#addx-y" aria-hidden="true"><span class="octicon octicon-link"></span></a>add(x, y)</h4>
+
+<p>Adds the edge from <code>x</code> to <code>y</code>, if it is not there</p>
+
+<h4>
+<a id="delx-y" class="anchor" href="#delx-y" aria-hidden="true"><span class="octicon octicon-link"></span></a>del(x, y)</h4>
+
+<p>Removes the edge from <code>x</code> to <code>y</code>, if it is there</p>
+
+<h4>
+<a id="get_node_valuex" class="anchor" href="#get_node_valuex" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_node_value(x)</h4>
+
+<p>Returns the value associated with the node <code>x</code></p>
+
+<h4>
+<a id="set_node_valuex-v" class="anchor" href="#set_node_valuex-v" aria-hidden="true"><span class="octicon octicon-link"></span></a>set_node_value(x, v)</h4>
+
+<p>Sets the value associated with the node <code>x</code> to <code>v</code></p>
+
+<h4>
+<a id="get_edge_valuex-y" class="anchor" href="#get_edge_valuex-y" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_edge_value(x, y)</h4>
+
+<p>Returns the value associated to the edge (<code>x</code>, <code>y</code>)</p>
+
+<h4>
+<a id="set_edge_valuex-y-v" class="anchor" href="#set_edge_valuex-y-v" aria-hidden="true"><span class="octicon octicon-link"></span></a>set_edge_value(x, y, v)</h4>
+
+<p>Sets the value associated to the edge (<code>x</code>, <code>y</code>) to <code>v</code></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2014 Jason Mulligan
+Licensed under the BSD-3 license</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/avoidwork">avoidwork</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
