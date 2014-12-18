@@ -6,7 +6,8 @@ Tiny graph data structure for Client or Server
 
 ## Example
 ```javascript
-var g = graph();
+var graph = require('graph'),
+    g = graph();
 
 g.set_node_value('f', 3);
 g.set_node_value('h', 21);
