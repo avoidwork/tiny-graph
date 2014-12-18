@@ -58,10 +58,8 @@ Graph.prototype.neighbors = function (x) {
  * @return {Boolean}  `true` if successful, `false` if failure
  */
 Graph.prototype.add = function (x, y) {
-	var n = this.nodes[x];
-
-	if ( n && this.nodes[y] ) {
-		n.edges[y] = null;
+	if ( this.nodes[x] && this.nodes[y] ) {
+		this.nodes[x].edges[y] = this.nodes[y].edges[x] = null;
 		return true;
 	}
 
@@ -77,10 +75,9 @@ Graph.prototype.add = function (x, y) {
  * @return {Boolean}  `true` if successful, `false` if failure
  */
 Graph.prototype.del = function (x, y) {
-	var n = this.nodes[x];
-
-	if ( n && this.nodes[y] ) {
-		delete n.edges[y];
+	if ( this.nodes[x] && this.nodes[y] ) {
+		delete this.nodes[x].edges[y];
+		delete this.nodes[y].edges[x];
 		return true;
 	}
 
@@ -153,10 +150,8 @@ Graph.prototype.get_edge_value = function (x, y) {
  * @return {Object}   Graph
  */
 Graph.prototype.set_edge_value = function (x, y, v) {
-	var n = this.nodes[x];
-
-	if ( n && n.edges[y] !== undefined ) {
-		n.edges[y] = v;
+	if ( this.nodes[x] && this.nodes[x].edges[y] !== undefined ) {
+		this.nodes[x].edges[y] = this.nodes[y].edges[x] = v;
 		return true;
 	}
 

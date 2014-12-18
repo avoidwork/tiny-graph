@@ -1,7 +1,7 @@
 {
   "name": "tiny-graph",
   "description": "Tiny graph data structure for Client or Server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "http://avoidwork.github.io/tiny-graph",
   "author": {
     "name": "Jason Mulligan",
