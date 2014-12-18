@@ -22,11 +22,11 @@ Graph.prototype.constructor = Graph;
  * @param  {String} y Node
  * @return {Boolean}  `true` if there is an adjacent edge
  */
-Graph.prototype.adjacent = function (x, y) {
-	var n = this.nodes[x];
+Graph.prototype.adjacent = function ( x, y ) {
+	var n = this.nodes[ x ];
 
-	if (n) {
-		return n.edges[y] !== undefined;
+	if ( n !== undefined ) {
+		return n.edges[ y ] !== undefined;
 	}
 
 	return false;
@@ -39,11 +39,11 @@ Graph.prototype.adjacent = function (x, y) {
  * @param  {String} x Node
  * @return {Array}    Adjacent Nodes
  */
-Graph.prototype.neighbors = function (x) {
-	var n = this.nodes[x];
+Graph.prototype.neighbors = function ( x ) {
+	var n = this.nodes[ x ];
 
-	if (n) {
-		return Object.keys(n.edges);
+	if ( n !== undefined ) {
+		return Object.keys( n.edges );
 	}
 
 	return [];
@@ -57,9 +57,9 @@ Graph.prototype.neighbors = function (x) {
  * @param  {String} y Node
  * @return {Boolean}  `true` if successful, `false` if failure
  */
-Graph.prototype.add = function (x, y) {
-	if ( this.nodes[x] && this.nodes[y] ) {
-		this.nodes[x].edges[y] = this.nodes[y].edges[x] = null;
+Graph.prototype.add = function ( x, y ) {
+	if ( this.nodes[ x ] !== undefined && this.nodes[ y ] !== undefined ) {
+		this.nodes[ x ].edges[ y ] = this.nodes[ y ].edges[ x ] = null;
 		return true;
 	}
 
@@ -74,10 +74,10 @@ Graph.prototype.add = function (x, y) {
  * @param  {String} y Node
  * @return {Boolean}  `true` if successful, `false` if failure
  */
-Graph.prototype.del = function (x, y) {
-	if ( this.nodes[x] && this.nodes[y] ) {
-		delete this.nodes[x].edges[y];
-		delete this.nodes[y].edges[x];
+Graph.prototype.del = function ( x, y ) {
+	if ( this.nodes[ x ] !== undefined && this.nodes[ x ].edges[ y ] !== undefined ) {
+		delete this.nodes[ x ].edges[ y ];
+		delete this.nodes[ y ].edges[ x ];
 		return true;
 	}
 
@@ -91,10 +91,10 @@ Graph.prototype.del = function (x, y) {
  * @param  {String} x Node
  * @return {Mixed}    Value of the Node, or `undefined`
  */
-Graph.prototype.get_node_value = function (x) {
-	var n = this.nodes[x];
+Graph.prototype.get_node_value = function ( x ) {
+	var n = this.nodes[ x ];
 
-	if ( n ) {
+	if ( n !== undefined ) {
 		return n.value;
 	}
 
@@ -109,14 +109,14 @@ Graph.prototype.get_node_value = function (x) {
  * @param  {Mixed}  v Value
  * @return {Object}   Graph
  */
-Graph.prototype.set_node_value = function (x, v) {
-	var n = this.nodes[x];
+Graph.prototype.set_node_value = function ( x, v ) {
+	var n = this.nodes[ x ];
 
 	if ( n ) {
 		n.value = v;
 	}
 	else {
-		this.nodes[x] = node(v);
+		this.nodes[ x ] = node( v );
 	}
 
 	return true;
@@ -130,11 +130,11 @@ Graph.prototype.set_node_value = function (x, v) {
  * @param  {String} y Node
  * @return {Mixed}    Value of the edge, or `undefined`
  */
-Graph.prototype.get_edge_value = function (x, y) {
-	var n = this.nodes[x];
+Graph.prototype.get_edge_value = function ( x, y ) {
+	var n = this.nodes[ x ];
 
-	if ( n && n.edges[y] !== undefined ) {
-		return n.edges[y];
+	if ( n !== undefined && n.edges[ y ] !== undefined ) {
+		return n.edges[ y ];
 	}
 
 	return undefined;
@@ -149,9 +149,9 @@ Graph.prototype.get_edge_value = function (x, y) {
  * @param  {Mixed}  v Value
  * @return {Object}   Graph
  */
-Graph.prototype.set_edge_value = function (x, y, v) {
-	if ( this.nodes[x] && this.nodes[x].edges[y] !== undefined ) {
-		this.nodes[x].edges[y] = this.nodes[y].edges[x] = v;
+Graph.prototype.set_edge_value = function ( x, y, v ) {
+	if ( this.nodes[ x ] !== undefined && this.nodes[ x ].edges[ y ] !== undefined ) {
+		this.nodes[ x ].edges[ y ] = this.nodes[ y ].edges[ x ] = v;
 		return true;
 	}
 

@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.3
+- Fixing accuracy of return of `del()`, updating tests
+
 ## 1.0.2
 - Fixing the edge relationships
 

@@ -10,4 +10,5 @@ else if ( typeof define == "function" ) {
 else {
 	global.graph = graph;
 }
-} )( this );
+} )
+( this );

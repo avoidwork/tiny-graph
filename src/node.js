@@ -4,7 +4,7 @@
  * @param {Mixed} value [Optional] Node value
  * @constructor
  */
-function Node (value) {
+function Node ( value ) {
 	this.value = value || null;
 	this.edges = {};
 }
@@ -23,6 +23,6 @@ Node.prototype.constructor = Node;
  * @param {Mixed} value [Optional] Node value
  * @return {Object} Node
  */
-function node (value) {
-	return new Node(value);
+function node ( value ) {
+	return new Node( value );
 }
