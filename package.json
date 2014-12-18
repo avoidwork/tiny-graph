@@ -1,0 +1,49 @@
+{
+  "name": "tiny-graph",
+  "description": "Tiny graph data structure for Client or Server",
+  "version": "0.1.0",
+  "homepage": "http://avoidwork.github.io/tiny-graph",
+  "author": {
+    "name": "Jason Mulligan",
+    "email": "jason.mulligan@avoidwork.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/avoidwork/tiny-graph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avoidwork/tiny-graph/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD-3",
+      "url": "https://raw.github.com/avoidwork/tiny-graph/master/LICENSE"
+    }
+  ],
+  "main": "lib/tiny-graph",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt-contrib-uglify": "^0.6.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.6",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-jshint": "~0.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.2",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-jsdoc": "~0.5.1",
+    "ink-docstrap": "~0.3.0"
+  },
+  "keywords": [
+    "graph",
+    "data structure",
+    "data"
+  ]
+}
