@@ -6,7 +6,7 @@ Tiny graph data structure for Client or Server
 
 ## Example
 ```javascript
-var graph = require('graph'),
+var graph = require('tiny-graph'),
     g = graph();
 
 g.set_node_value('f', 3);
@@ -18,6 +18,9 @@ console.log(g.adjacent('f', 'h')); // true
 console.log(g.neighbors('f')); // ['h']
 console.log(g.get_edge_value('f', 'h')); // 100
 ```
+
+## How can I use tiny-graph?
+tiny-graph can be installed from npm & bower, and supports AMD loaders or script tags.
 
 ## API
 #### adjacent(x, y)

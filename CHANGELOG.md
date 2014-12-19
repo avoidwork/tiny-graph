@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.7
+- Updating README
+- Removing erroneous dependency in `package.json`
+
 ## 1.0.6
 - Fixing `set_node_value()` such that it handles the falsy `v`
 - Creating `del_node()` which removes node `x` from the graph
