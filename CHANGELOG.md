@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.6
+- Fixing `set_node_value()` such that it handles the falsy `v`
+- Creating `del_node()` which removes node `x` from the graph
+- Updating tests
+
 ## 1.0.5
 - Fixing `set_edge_value()` such that `null` is substituted for `v` if `v` is `undefined`, updating tests
 

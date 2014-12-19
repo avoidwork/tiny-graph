@@ -38,6 +38,9 @@ Returns the value associated with the node `x`
 #### set_node_value(x, v)
 Sets the value associated with the node `x` to `v`
 
+#### del_node(x)
+Removes node `x` from the graph, if it is there
+
 #### get_edge_value(x, y)
 Returns the value associated to the edge (`x`, `y`)
 

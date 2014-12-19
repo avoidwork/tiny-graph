@@ -85,6 +85,28 @@ Graph.prototype.del = function ( x, y ) {
 };
 
 /**
+ * Removes node `x` from the graph
+ *
+ * @method del_node
+ * @param  {String} x Node
+ * @return {Boolean}  `true` if successful, `false` if invalid
+ */
+Graph.prototype.del_node = function ( x ) {
+	var self = this,
+		n = this.nodes[ x ];
+
+	if ( n !== undefined ) {
+		Object.keys( n.edges ).forEach( function ( y ) {
+			delete self.nodes[ y ].edges[ x ];
+		} );
+		delete this.nodes[ x ];
+		return true;
+	}
+
+	return false;
+};
+
+/**
  * Returns the value associated with the node `x`
  *
  * @method get_node_value
@@ -111,6 +133,8 @@ Graph.prototype.get_node_value = function ( x ) {
  */
 Graph.prototype.set_node_value = function ( x, v ) {
 	var n = this.nodes[ x ];
+
+	v = v !== undefined ? v : null;
 
 	if ( n ) {
 		n.value = v;
