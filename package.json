@@ -1,7 +1,7 @@
 {
   "name": "tiny-graph",
   "description": "Tiny graph data structure for Client or Server",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "homepage": "http://avoidwork.github.io/tiny-graph",
   "author": {
     "name": "Jason Mulligan",
@@ -29,9 +29,9 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-6to5": "^2.0.0",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-concat": "~0.1.3",
-    "grunt-contrib-jshint": "~0.1",
     "grunt-contrib-nodeunit": "~0.1.2",
     "grunt-contrib-watch": "~0.2",
     "grunt-contrib-uglify": "~0.6.0"

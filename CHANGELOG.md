@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.0
+- Refactored as ES6, utilizing `6to5` for transpiling to ES5
+- Created `defined()` such that the code is DRY
+- Creating `tiny-graph.es6.js` build artifact in `/lib`
+- Removed `jshint` build step
+
 ## 1.0.7
 - Updating README
 - Removing erroneous dependency in `package.json`

@@ -21,14 +21,18 @@ module.exports = function (grunt) {
 					"src/graph.js",
 					"src/outro.js"
 				],
-				dest : "lib/<%= pkg.name %>.js"
+				dest : "lib/<%= pkg.name %>.es6.js"
 			}
 		},
-		jshint : {
-			options : {
-				jshintrc : ".jshintrc"
+		"6to5": {
+			options: {
+				sourceMap: false
 			},
-			src : "lib/<%= pkg.name %>.js"
+			dist: {
+				files: {
+					"lib/<%= pkg.name %>.js": "lib/<%= pkg.name %>.es6.js"
+				}
+			}
 		},
 		nodeunit : {
 			all : ["test/*.js"]
@@ -47,7 +51,7 @@ module.exports = function (grunt) {
 			},
 			target: {
 				files: {
-					"lib/tiny-graph.min.js" : ["lib/tiny-graph.js"]
+					"lib/<%= pkg.name %>.min.js" : ["lib/<%= pkg.name %>.js"]
 				}
 			}
 		},
@@ -66,12 +70,12 @@ module.exports = function (grunt) {
 	// tasks
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-nodeunit");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-6to5");
 
 	// aliases
-	grunt.registerTask("test", ["jshint", "nodeunit"]);
-	grunt.registerTask("build", ["concat", "test"]);
+	grunt.registerTask("test", ["nodeunit"]);
+	grunt.registerTask("build", ["concat", "6to5", "test"]);
 	grunt.registerTask("default", ["build", "uglify"]);
 };

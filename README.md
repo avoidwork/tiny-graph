@@ -21,6 +21,7 @@ console.log(g.get_edge_value('f', 'h')); // 100
 
 ## How can I use tiny-graph?
 tiny-graph can be installed from npm & bower, and supports AMD loaders or script tags.
+An ES6 version is available in `/lib`.
 
 ## API
 #### adjacent(x, y)
