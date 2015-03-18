@@ -1,24 +1,24 @@
-let defined = ( arg ) => {
+function defined ( arg ) {
 	return arg !== undefined;
-};
+}
 
-let graph = () => {
+function graph () {
 	return new Graph();
-};
+}
 
-let node = ( value ) => {
+function node ( value ) {
 	return new Node( value );
-};
+}
 
-if ( typeof exports != "undefined" ) {
+if ( typeof exports !== "undefined" ) {
 	module.exports = graph;
 }
-else if ( typeof define == "function" ) {
-	define( () => {
+else if ( typeof define === "function" ) {
+	define( function () {
 		return graph;
 	} );
 }
 else {
 	global.graph = graph;
 }
-}( this );
+}( typeof global !== "undefined" ? global : window );

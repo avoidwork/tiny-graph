@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.1
+- Fixed ES6 IIFE signature
+- Updated build dependencies
+- Updated `travis-ci.org` file to include `node.js 0.12.x`, & the latest `io.js`
+
 ## 1.1.0
 - Refactored as ES6, utilizing `6to5` for transpiling to ES5
 - Created `defined()` such that the code is DRY

@@ -43,12 +43,11 @@ class Graph {
 	}
 
 	del_node ( x ) {
-		let self = this;
 		let n = this.nodes[ x ];
 
 		if ( defined( n ) ) {
 			Object.keys( n.edges ).forEach( ( y ) => {
-				delete self.nodes[ y ].edges[ x ];
+				delete this.nodes[ y ].edges[ x ];
 			} );
 			delete this.nodes[ x ];
 			return true;

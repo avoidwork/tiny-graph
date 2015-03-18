@@ -52,5 +52,5 @@ Returns the value associated to the edge (`x`, `y`)
 Sets the value associated to the edge (`x`, `y`) to `v`
 
 ## License
-Copyright (c) 2014 Jason Mulligan
+Copyright (c) 2015 Jason Mulligan
 Licensed under the BSD-3 license
