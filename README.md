@@ -1,6 +1,6 @@
 # tiny-graph
 
-[![build status](https://secure.travis-ci.org/avoidwork/tiny-graph.svg)](http://travis-ci.org/avoidwork/tiny-graph) [![Join the chat at https://gitter.im/avoidwork/tiny-graph](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/avoidwork/tiny-graph?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![build status](https://secure.travis-ci.org/avoidwork/tiny-graph.svg)](http://travis-ci.org/avoidwork/tiny-graph)
 
 Tiny graph data structure for Client or Server
 
