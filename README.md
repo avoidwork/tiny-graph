@@ -23,32 +23,38 @@ console.log(g.getEdgeValue('f', 'h')); // 100
 tiny-graph can be installed from npm & bower, and supports AMD loaders or script tags (`window.graph`).
 
 ## API
-#### adjacent(x, y)
-Tests whether there is an edge from node `x` to node `y`
-
-#### neighbors(x)
-Lists all nodes `y` such that there is an edge from `x` to `y`
-
 #### add(x, y)
 Adds the edge from `x` to `y`, if it is not there
+
+#### adjacent(x, y)
+Tests whether there is an edge from node `x` to node `y`
 
 #### del(x, y)
 Removes the edge from `x` to `y`, if it is there
 
-#### getNodeValue(x)
-Returns the value associated with the node `x`
-
-#### setNodeValue(x, v)
-Sets the value associated with the node `x` to `v`
-
 #### delNode(x)
 Removes node `x` from the graph, if it is there
+
+#### fromJSON(arg)
+Deserializes arg as the graph
 
 #### getEdgeValue(x, y)
 Returns the value associated to the edge (`x`, `y`)
 
+#### getNodeValue(x)
+Returns the value associated with the node `x`
+
+#### neighbors(x)
+Lists all nodes `y` such that there is an edge from `x` to `y`
+
 #### setEdgeValue(x, y, v)
 Sets the value associated to the edge (`x`, `y`) to `v`
+
+#### setNodeValue(x, v)
+Sets the value associated with the node `x` to `v`
+
+#### toJSON()
+Serializes the graph as JSON
 
 ## License
 Copyright (c) 2018 Jason Mulligan
