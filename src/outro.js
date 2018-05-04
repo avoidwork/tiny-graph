@@ -10,6 +10,6 @@
 	} else if (typeof define === "function" && define.amd !== void 0) {
 		define(() => graph);
 	} else {
-		global.haro = graph;
+		global.graph = graph;
 	}
 }(typeof window !== "undefined" ? window : global));
