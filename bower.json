@@ -1,30 +1,27 @@
 {
   "name": "tiny-graph",
-  "version": "1.0.0",
   "homepage": "https://github.com/avoidwork/tiny-graph",
   "authors": [
     "Jason Mulligan <jason.mulligan@avoidwork.com>"
   ],
   "description": "Tiny graph data structure for Client or Server",
-  "main": "lib/tiny-graph.min.js",
+  "main": "lib/tiny-graph.js",
   "moduleType": [
     "amd",
     "globals",
     "node"
   ],
   "keywords": [
-    "proxy",
-    "Object"
+    "graph"
   ],
   "license": "BSD-3",
   "ignore": [
     "**/.*",
-    "doc",
     "node_modules",
-    "bower_components",
     "src",
     "test",
-    "tests",
-    "docstrap.json"
+    "Gruntfile.js",
+    "package.json",
+    "package-lock.json"
   ]
 }

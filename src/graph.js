@@ -1,102 +1,108 @@
-class Graph {
-	constructor() {
-		this.nodes = {}
-	}
-
-	adjacent ( x, y ) {
-		let n = this.nodes[ x ];
-
-		if ( defined( n ) ) {
-			return defined( n.edges[ y ] );
+	class Graph {
+		constructor () {
+			this.nodes = {};
 		}
 
-		return false;
-	}
+		adjacent (x, y) {
+			const n = this.nodes[x];
+			let result = false;
 
-	neighbors ( x ) {
-		let n = this.nodes[ x ];
+			if (defined(n)) {
+				result = defined(n.edges[y]);
+			}
 
-		if ( defined( n ) ) {
-			return Object.keys( n.edges );
+			return result;
 		}
 
-		return [];
-	}
+		neighbors (x) {
+			const n = this.nodes[x];
 
-	add ( x, y ) {
-		if ( defined( this.nodes[ x ] ) && defined( this.nodes[ y ] ) ) {
-			this.nodes[ x ].edges[ y ] = this.nodes[ y ].edges[ x ] = null;
+			return defined(n) ? Object.keys(n.edges) : [];
+		}
+
+		add (x, y) {
+			let result = false;
+
+			if (defined(this.nodes[x]) && defined(this.nodes[y])) {
+				this.nodes[x].edges[y] = this.nodes[y].edges[x] = null;
+				result = true;
+			}
+
+			return result;
+		}
+
+		del (x, y) {
+			let result = false;
+
+			if (defined(this.nodes[x]) && defined(this.nodes[x].edges[y])) {
+				delete this.nodes[x].edges[y];
+				delete this.nodes[y].edges[x];
+				result = true;
+			}
+
+			return result;
+		}
+
+		delNode (x) {
+			const n = this.nodes[x];
+			let result = false;
+
+			if (defined(n)) {
+				Object.keys(n.edges).forEach(y => {
+					delete this.nodes[y].edges[x];
+				});
+
+				delete this.nodes[x];
+				result = true;
+			}
+
+			return result;
+		}
+
+		getNodeValue (x) {
+			const n = this.nodes[x];
+			let result;
+
+			if (defined(n)) {
+				result = n.value;
+			}
+
+			return result;
+		}
+
+		setNodeValue (x, v) {
+			const n = this.nodes[x];
+
+			v = defined(v) ? v : null;
+
+			if (n) {
+				n.value = v;
+			} else {
+				this.nodes[x] = node(v);
+			}
+
 			return true;
 		}
 
-		return false;
-	}
+		getEdgeValue (x, y) {
+			const n = this.nodes[x];
+			let result;
 
-	del ( x, y ) {
-		if ( defined( this.nodes[ x ] ) && defined( this.nodes[ x ].edges[ y ] ) ) {
-			delete this.nodes[ x ].edges[ y ];
-			delete this.nodes[ y ].edges[ x ];
-			return true;
+			if (defined(n) && defined(n.edges[y])) {
+				result = n.edges[y];
+			}
+
+			return result;
 		}
 
-		return false;
-	}
+		setEdgeValue (x, y, v) {
+			let result = false;
 
-	del_node ( x ) {
-		let n = this.nodes[ x ];
+			if (defined(this.nodes[x]) && defined(this.nodes[x].edges[y])) {
+				this.nodes[x].edges[y] = this.nodes[y].edges[x] = defined(v) ? v : null;
+				result = true;
+			}
 
-		if ( defined( n ) ) {
-			Object.keys( n.edges ).forEach( ( y ) => {
-				delete this.nodes[ y ].edges[ x ];
-			} );
-			delete this.nodes[ x ];
-			return true;
+			return result;
 		}
-
-		return false;
 	}
-
-	get_node_value ( x ) {
-		let n = this.nodes[ x ];
-
-		if ( defined ( n ) ) {
-			return n.value;
-		}
-
-		return undefined;
-	}
-
-	set_node_value ( x, v ) {
-		let n = this.nodes[ x ];
-
-		v = defined( v ) ? v : null;
-
-		if ( n ) {
-			n.value = v;
-		}
-		else {
-			this.nodes[ x ] = node( v );
-		}
-
-		return true;
-	}
-
-	get_edge_value ( x, y ) {
-		let n = this.nodes[ x ];
-
-		if ( defined( n ) && defined( n.edges[ y ] ) ) {
-			return n.edges[ y ];
-		}
-
-		return undefined;
-	}
-
-	set_edge_value ( x, y, v ) {
-		if ( defined( this.nodes[ x ] ) && defined( this.nodes[ x ].edges[ y ] ) ) {
-			this.nodes[ x ].edges[ y ] = this.nodes[ y ].edges[ x ] = defined( v ) ? v : null;
-			return true;
-		}
-
-		return false;
-	}
-}

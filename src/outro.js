@@ -1,24 +1,15 @@
-function defined ( arg ) {
-	return arg !== undefined;
-}
+	function graph () {
+		return new Graph();
+	}
 
-function graph () {
-	return new Graph();
-}
+	graph.version = "{{VERSION}}";
 
-function node ( value ) {
-	return new Node( value );
-}
-
-if ( typeof exports !== "undefined" ) {
-	module.exports = graph;
-}
-else if ( typeof define === "function" ) {
-	define( function () {
-		return graph;
-	} );
-}
-else {
-	global.graph = graph;
-}
-}( typeof global !== "undefined" ? global : window );
+	// Node, AMD & window supported
+	if (typeof exports !== "undefined") {
+		module.exports = graph;
+	} else if (typeof define === "function" && define.amd !== void 0) {
+		define(() => graph);
+	} else {
+		global.haro = graph;
+	}
+}(typeof window !== "undefined" ? window : global));

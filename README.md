@@ -6,22 +6,21 @@ Tiny graph data structure for Client or Server
 
 ## Example
 ```javascript
-var graph = require('tiny-graph'),
+const graph = require('tiny-graph'),
     g = graph();
 
-g.set_node_value('f', 3);
-g.set_node_value('h', 21);
+g.setNodeValue('f', 3);
+g.setNodeValue('h', 21);
 g.add('f', 'h');
-g.set_edge_value('f', 'h', 100);
+g.setEdgeValue('f', 'h', 100);
 
 console.log(g.adjacent('f', 'h')); // true
 console.log(g.neighbors('f')); // ['h']
-console.log(g.get_edge_value('f', 'h')); // 100
+console.log(g.getEdgeValue('f', 'h')); // 100
 ```
 
 ## How can I use tiny-graph?
-tiny-graph can be installed from npm & bower, and supports AMD loaders or script tags.
-An ES6 version is available in `/lib`.
+tiny-graph can be installed from npm & bower, and supports AMD loaders or script tags (`window.graph`).
 
 ## API
 #### adjacent(x, y)
@@ -36,21 +35,21 @@ Adds the edge from `x` to `y`, if it is not there
 #### del(x, y)
 Removes the edge from `x` to `y`, if it is there
 
-#### get_node_value(x)
+#### getNodeValue(x)
 Returns the value associated with the node `x`
 
-#### set_node_value(x, v)
+#### setNodeValue(x, v)
 Sets the value associated with the node `x` to `v`
 
-#### del_node(x)
+#### delNode(x)
 Removes node `x` from the graph, if it is there
 
-#### get_edge_value(x, y)
+#### getEdgeValue(x, y)
 Returns the value associated to the edge (`x`, `y`)
 
-#### set_edge_value(x, y, v)
+#### setEdgeValue(x, y, v)
 Sets the value associated to the edge (`x`, `y`) to `v`
 
 ## License
-Copyright (c) 2015 Jason Mulligan
+Copyright (c) 2018 Jason Mulligan
 Licensed under the BSD-3 license

@@ -1,12 +1,10 @@
 {
   "name": "tiny-graph",
   "description": "Tiny graph data structure for Client or Server",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "homepage": "http://avoidwork.github.io/tiny-graph",
-  "author": {
-    "name": "Jason Mulligan",
-    "email": "jason.mulligan@avoidwork.com"
-  },
+  "author": "Jason Mulligan <jason.mulligan@avoidwork.com>",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/avoidwork/tiny-graph.git"
@@ -14,28 +12,25 @@
   "bugs": {
     "url": "https://github.com/avoidwork/tiny-graph/issues"
   },
-  "licenses": [
-    {
-      "type": "BSD-3",
-      "url": "https://raw.github.com/avoidwork/tiny-graph/master/LICENSE"
-    }
-  ],
-  "main": "lib/tiny-graph",
+  "main": "lib/tiny-graph.js",
+  "engineStrict": true,
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=7.6.0"
   },
   "scripts": {
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt" : "~0.4.5",
-    "grunt-babel": "^4.0.0",
-    "grunt-cli" : "~0.1.13",
-    "grunt-sed": "~0.1.1",
-    "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-uglify": "~0.7.0"
+    "babel-core": "^6.26.0",
+    "babel-minify": "^0.3.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^20.1.0",
+    "grunt-replace": "^1.0.1"
   },
   "keywords": [
     "graph",
